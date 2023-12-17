@@ -1,5 +1,5 @@
 
-class Node():
+class Node(): 
     def __init__(self):
         self.data=None 
         self.prev=None 
@@ -19,8 +19,8 @@ class Three():
             print(self.root.next[q].data)
     def add_files(self,address):
         try:
-            address=address.split('/')
-            address[0]+='/'
+            address=address.split('\\')
+            address[0]+='\\'
             la=len(address)
             nd=None 
             for q in range(la):
@@ -44,8 +44,8 @@ class Three():
             if len(address)==3:
                 address=[address]
             else:
-                address=address.split('/')
-                address[0]+='/'
+                address=address.split('\\')
+                address[0]+='\\'
             la=len(address)
             nd=None 
             for q in range(la):
@@ -75,34 +75,34 @@ class Three():
         except:pass 
 # -----------------  
 t=Three()
-ln=['C:/','E:/','D:/','B:/','K:/']
+ln=['C:\\','E:\\','D:\\','B:\\','K:\\']
 ld=len(ln)
 for q in range(ld):
     t.add_disk(ln[q])
 t.print_disk()
 #---------[C]---------
-address='C:/N1'
+address='C:\\N1'
 t.add_files(address)
-address='C:/N1/main.py'
+address='C:\\N1\\main.py'
 t.add_files(address)
-address='C:/N1/main2.py'
+address='C:\\N1\\main2.py'
 t.add_files(address)
-address='C:/N1/N2'
+address='C:\\N1\\N2'
 t.add_files(address)
 address='C:/N1/N2/main3.py'
 t.add_files(address)
 # ---------[E]----------
-address='E:/User'
+address='E:\\User'
 t.add_files(address)
-address+='/AliasgharZahdyan'
+address+='\\AliasgharZahdyan'
 t.add_files(address)
 print('---------C------------')
-address='C:/'
+address='C:\\'
 t.show_files(address)
 address+='N1'
 t.show_files(address)
-address+='/N2'
+address+='\\N2'
 t.show_files(address)
 print('-----------E-------------')
-address='E:/User'
+address='E:\\User'
 t.show_files(address)
